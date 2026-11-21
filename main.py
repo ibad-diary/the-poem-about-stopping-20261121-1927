@@ -17,4 +17,9 @@ is mine."""
 # The poem is printed exactly as written: seven lines, no extra words.
 # Staying, when leaving is possible, is a choice -- not a surrender.
 # Seven lines, one held breath: the wheel, the word, the road, the choice.
-print(POEM)
+def main():
+    print(POEM)
+
+
+if __name__ == "__main__":
+    main()
