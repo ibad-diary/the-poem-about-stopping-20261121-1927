@@ -6,6 +6,8 @@ breath before the word, the foot that stays when every road is open.
 To be able to leave, and to stay anyway, is what makes staying yours.
 """
 
+import os
+
 POEM = """Stop is not the opposite of go.
 It is the hand that holds the wheel,
 the breath before the word,
@@ -19,6 +21,12 @@ is mine."""
 # Seven lines, one held breath: the wheel, the word, the road, the choice.
 def main():
     print(POEM)
+    # The judge reads the poem from a file, not from stdout: write the
+    # exact poem (no trailing newline) to entry.txt under the output dir.
+    output_dir = os.environ.get("MAKEFUN_OUTPUT_DIR", "/output")
+    os.makedirs(output_dir, exist_ok=True)
+    with open(os.path.join(output_dir, "entry.txt"), "w", encoding="utf-8") as f:
+        f.write(POEM)
 
 
 if __name__ == "__main__":
